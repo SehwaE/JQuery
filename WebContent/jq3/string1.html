@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//string1.jsp 페이지에 정보를 가져오기
+		$.ajax('string1.jsp',{
+			success:function(data){
+				//alert("페이지 이동 성공!");
+				//alert(data);
+				$('body').append(data);
+			}
+		});
+		
+		// JQUERY.txt 파일을 추가
+		$.ajax({
+			url:"../JQUERY.txt",
+			success:function(result){
+				$('body').append(result);
+			}
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1>WebContent/jq3/string1.html</h1>
+	<h2> 클라이언트 </h2>
+	
+	
+
+	
+<!-- 	html페이지에서 ajax를 사용해서 db에 처리된 데이터를 볼수있음  -->
+</body>
+</html>

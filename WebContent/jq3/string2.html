@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		$.ajax({
+			url:"string2.jsp",
+			data: { name:'홍길동', age:20 },
+			type:"post",
+			//function(이름) <- 함수안에 들어가는 이름은 아무거나 상관없음
+			//데이터 타입 지정안하면 html타입으로 가져옴
+			success:function(data){
+				alert("성공!");
+				$('body').append(data);
+			}
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1>WebContent/jq3/string2.html</h1>
+	
+	
+</body>
+</html>

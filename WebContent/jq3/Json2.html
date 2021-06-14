@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		//Json2.json 파일의 데이터를 가져와서 출력
+		$.getJSON('Json2.json',function(data){
+			// data => JSON 객체를 받기
+			console.log(data);
+			// => json파일의 구조 확인
+			$.each(data,function(a,b){
+				//객체의 정보를 가져오려면 저장한 요소에 접근해야함
+				//$('body').append(a+"--"+b.name+"<br>");
+				
+				$('table').append("<tr><td>"+b.name+"</td><td>"+b.age+"</td><td>"+b.gender+"</td></tr>");
+			});
+		});
+		
+	});
+
+</script>
+</head>
+<body>
+	<table border="1">
+	  <tr>
+	    <td>이름 </td>
+	    <td>나이</td>
+	    <td>성별</td>
+	  </tr>
+	</table>
+</body>
+</html>
